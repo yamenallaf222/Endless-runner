@@ -270,9 +270,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 744119606472663925, guid: 75ec0100d02fe884b97cbf498603de64, type: 3}
   obstaclePrefab: {fileID: 7214345974637789306, guid: 65253451d092c784b95ada3f9a89e3b8, type: 3}
+  obstacleBoundsPadding: 0.5
   minimumObstacleCount: 1
   maximumObstacleCount: 6
-  obstacles: []
 --- !u!1 &619759619
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,7 +690,7 @@ Transform:
   m_GameObject: {fileID: 1419502646}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5819607, y: -1.7281799, z: 3.4882383}
+  m_LocalPosition: {x: -1.5819607, y: -2.46, z: 3.4882383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

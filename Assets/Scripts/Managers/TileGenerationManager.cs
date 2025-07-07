@@ -9,6 +9,7 @@ public class TileGenerationManager : MonoBehaviour
     [SerializeField]
     GameObject obstaclePrefab;
 
+    public float obstacleBoundsPadding = 0.5f;
     public int minimumObstacleCount = 1;
     public int maximumObstacleCount = 6;
 
@@ -43,16 +44,21 @@ public class TileGenerationManager : MonoBehaviour
 
         int obstacleCount = Random.Range(minimumObstacleCount, maximumObstacleCount);
 
+        // Calculate the bounds of the tile to place obstacles within it
+        Bounds bounds = tile.transform.GetChild(2).GetComponent<BoxCollider>().bounds;
+
+
         GameObject[] obstacles = new GameObject[obstacleCount];
 
         for (int i = 0; i < obstacleCount; i++)
         {
-            Vector3 obstaclePosition = tile.transform.position;
 
-            obstaclePosition.x += Random.Range(-5, 5);
-            obstaclePosition.z += Random.Range(-5, 5);
-
-            GameObject obstacle = Instantiate(obstaclePrefab, obstaclePosition, Quaternion.identity);
+            Vector3 randomPos = new Vector3(
+                Random.Range(bounds.min.x + obstacleBoundsPadding, bounds.max.x - obstacleBoundsPadding),
+                tile.transform.position.y,
+                Random.Range(bounds.min.z + obstacleBoundsPadding, bounds.max.z - obstacleBoundsPadding)
+            );
+            GameObject obstacle = Instantiate(obstaclePrefab, randomPos, Quaternion.identity);
 
             obstacles[i] = obstacle;
         }
