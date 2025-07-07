@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
 
-        Vector3 movement = new Vector3(horizontalInput, 0f, 1) * moveSpeed * Time.deltaTime;
+        Vector3 movement = new Vector3(horizontalInput, 0f, 1f) * moveSpeed * Time.deltaTime;
         transform.Translate(movement);
     }
 
