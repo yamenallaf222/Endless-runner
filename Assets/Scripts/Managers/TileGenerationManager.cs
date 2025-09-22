@@ -59,6 +59,7 @@ public class TileGenerationManager : MonoBehaviour
                 Random.Range(bounds.min.z + obstacleBoundsPadding, bounds.max.z - obstacleBoundsPadding)
             );
             GameObject obstacle = Instantiate(obstaclePrefab, randomPos, Quaternion.identity);
+            obstacle.tag = "Obstacle"; // Ensure the obstacle has the correct tag
 
             obstacles[i] = obstacle;
         }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InstantiationTrigger
   - DestroyTrigger
+  - Obstacle
   layers:
   - Default
   - TransparentFX
